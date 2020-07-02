@@ -6,6 +6,7 @@ import HPI from "../views/HPI.vue";
 import PMH from "../views/PMH.vue";
 import FHX from "../views/FHX.vue";
 import SHX from "../views/SHX.vue";
+import ComingSoon from "../views/ComingSoon.vue";
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: "/questions-doctors-ask/shx",
     name: "Social History",
     component: SHX
+  },
+  {
+    path: "/coming-soon",
+    name: "Coming Soon",
+    component: ComingSoon
   },
   {
     path: "/about",

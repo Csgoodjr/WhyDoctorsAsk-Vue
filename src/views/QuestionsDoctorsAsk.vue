@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Questions Doctors Ask</h1>
+        <h1 class="main-header">Questions Doctors Ask</h1>
         <CardArray :cards="cards" cardType="image"/>
     </div>
 </template>
@@ -25,3 +25,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .main-header {
+        padding: 20px;
+    }
+</style>

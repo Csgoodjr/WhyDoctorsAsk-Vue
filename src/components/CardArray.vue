@@ -7,7 +7,12 @@
         </div>
         <div class="card-array" v-if="cardType=='image'">
             <div v-for="card in cards" v-bind:key="card.id">
-                <ImageCard :title="card.title" :image="card.image" :description="card.description" :ref="card.ref"/>
+                <ImageCard :title="card.title" :reference="card.ref" :image="card.image" :description="card.description"/>
+            </div>
+        </div>
+        <div class="card-array" v-if="cardType=='about'">
+            <div v-for="card in cards" v-bind:key="card.id">
+                <AboutCard :name="card.name" :info="card.info" :quote="card.quote" :image="card.image" />
             </div>
         </div>
     </div>
@@ -16,6 +21,7 @@
 <script>
 import InfoCard from "@/components/InfoCard.vue";
 import ImageCard from "@/components/ImageCard.vue";
+import AboutCard from "@/components/AboutCard.vue";
 export default {
     name: "CardArray",
     props: {
@@ -30,7 +36,8 @@ export default {
     },
     components: {
         InfoCard,
-        ImageCard
+        ImageCard,
+        AboutCard
     }
 };
 </script>
