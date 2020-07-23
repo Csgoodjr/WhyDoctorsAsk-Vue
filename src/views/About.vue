@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div class="page-header">
+      <h1>About our team!</h1>
+    </div>
     <CardArray :cards="cards" cardType="about"/>
   </div>
 </template>
@@ -25,3 +27,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.page-header {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+    min-width: 50%;
+    max-width: 75%;
+}
+</style>

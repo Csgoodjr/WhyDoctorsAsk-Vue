@@ -1,20 +1,30 @@
 <template>
     <div id="card-container">
-        <div class="card-array" v-if="cardType=='regular'">
-            <div v-for="card in cards" v-bind:key="card.id">
-                <InfoCard :answer="card.answer" :image="card.image" :question="card.question"/>
-            </div>
-        </div>
-        <div class="card-array" v-if="cardType=='image'">
-            <div v-for="card in cards" v-bind:key="card.id">
-                <ImageCard :title="card.title" :reference="card.ref" :image="card.image" :description="card.description"/>
-            </div>
-        </div>
-        <div class="card-array" v-if="cardType=='about'">
-            <div v-for="card in cards" v-bind:key="card.id">
-                <AboutCard :name="card.name" :info="card.info" :quote="card.quote" :image="card.image" />
-            </div>
-        </div>
+        <b-card-group columns v-if="cardType=='regular'">
+            <InfoCard 
+            v-for="card in cards" 
+            v-bind:key="card.id"
+            :answer="card.answer"
+            :question="card.question"/>
+        </b-card-group>
+        <b-card-group columns v-if="cardType=='image'">
+            <ImageCard
+            v-for="card in cards" 
+            v-bind:key="card.id"
+            :title="card.title" 
+            :reference="card.ref" 
+            :image="card.image" 
+            :description="card.description"/>
+        </b-card-group>
+        <b-card-group columns v-if="cardType=='about'">
+            <AboutCard 
+            v-for="card in cards" 
+            v-bind:key="card.id"
+            :name="card.name" 
+            :info="card.info" 
+            :quote="card.quote" 
+            :image="card.image"/>
+        </b-card-group>
     </div>
 </template>
 
@@ -45,12 +55,5 @@ export default {
 <style scoped>
     #card-container {
         padding: 0rem 2rem;
-    }
-    .card-array {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
-        grid-auto-rows: auto;
-        grid-gap: 1rem;
-        padding: 10px 10px 50px 10px;
     }
 </style>

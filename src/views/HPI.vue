@@ -1,6 +1,10 @@
 <template>
     <div id="hpi">
         <Breadcrumb :currentPage="pageTitle"/>
+        <div class="page-header">
+            <h1>History of Present Illness</h1>
+            <p>This is what doctors call what you are coming to see them for today.</p>
+        </div>
         <CardGallery :cards="cards" cardType="regular"/>
         <CardArray :cards="cards" cardType="regular"/>
     </div>
@@ -32,3 +36,13 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.page-header {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem;
+    min-width: 50%;
+    max-width: 75%;
+}
+</style>

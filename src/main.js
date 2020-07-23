@@ -16,6 +16,9 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 // Import Text Truncate
 import TextTruncate from 'vue-text-truncate';
 
+// Import Google Maps API (With Vue2)
+import * as VueGoogleMaps from 'vue2-google-maps';
+
 // Import Font Awesome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +31,12 @@ library.add(faFontAwesome);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(firestorePlugin);
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyAw2VOC57tm9NsYgEfgGL9NvWJge8ufz_A",
+    libraries: "places"
+  }
+});
 
 Vue.component('TextTruncate', TextTruncate);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
