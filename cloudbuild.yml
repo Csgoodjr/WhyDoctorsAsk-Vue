@@ -1,3 +1,0 @@
-steps:
-- name: gcr.io/whydoctorsask-f0681/firebase
-args: ['deploy', '--project=whydoctorsask-f0681','--only=hosting']
